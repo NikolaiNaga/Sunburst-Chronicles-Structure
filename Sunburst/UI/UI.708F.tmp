@@ -1,0 +1,360 @@
+[gd_scene load_steps=30 format=3 uid="uid://ci43lo81t53i1"]
+
+[ext_resource type="StyleBox" uid="uid://b3wbt1h1v8aq1" path="res://Sunburst/Styles/BackgroundStyle.tres" id="1_7ymk2"]
+[ext_resource type="Script" path="res://Sunburst/UI/UI.gd" id="1_ayyp2"]
+[ext_resource type="Texture2D" uid="uid://bvcycmp16w0bo" path="res://Sunburst/Assets/1205647.png" id="2_ew2o5"]
+[ext_resource type="Texture2D" uid="uid://bv7l8fptkbept" path="res://Sunburst/Assets/Mana.png" id="3_kqfao"]
+[ext_resource type="Texture2D" uid="uid://dwvxfvxy6cv34" path="res://Sunburst/Assets/Fortitude.webp" id="4_dui0p"]
+[ext_resource type="LabelSettings" uid="uid://wm3pli7ltpr8" path="res://Sunburst/Styles/ManaLabelSettings.tres" id="4_ei3q7"]
+[ext_resource type="LabelSettings" uid="uid://bjwjvpqoniseq" path="res://Sunburst/Styles/LabelSettingsDefault.tres" id="5_dsiaw"]
+[ext_resource type="Texture2D" uid="uid://c7yq5uatqkb0y" path="res://Sunburst/Assets/O3UOts-diamond-best-png.png" id="6_7dmgb"]
+[ext_resource type="LabelSettings" uid="uid://cnl2urlrngowo" path="res://Sunburst/Styles/FortitudeLabelSettings.tres" id="6_sxky7"]
+[ext_resource type="StyleBox" uid="uid://bk2vn5bpugsjh" path="res://Sunburst/Styles/NEwBackgroundStyle.tres" id="8_80dwt"]
+[ext_resource type="Texture2D" uid="uid://b3an1yiporl7l" path="res://Sunburst/Assets/coin.png" id="10_fword"]
+[ext_resource type="PackedScene" uid="uid://dxexhjhuf1m87" path="res://Sunburst/Scenes/Profile/Profile.tscn" id="11_5ylvy"]
+[ext_resource type="Texture2D" uid="uid://0opj7nv4ykdj" path="res://Sunburst/Assets/Icons/medieval-tower.png" id="11_jeb1e"]
+[ext_resource type="PackedScene" uid="uid://dxfgiujw566yj" path="res://Sunburst/Scenes/Jobs/JobList.tscn" id="12_f0u53"]
+[ext_resource type="Texture2D" uid="uid://blk3iwtv2j2v2" path="res://Sunburst/Assets/Icons/blacksmith.png" id="12_vpmdf"]
+[ext_resource type="Texture2D" uid="uid://6ymr5pd05t2r" path="res://Sunburst/Assets/Icons/home.png" id="13_8wubl"]
+[ext_resource type="Texture2D" uid="uid://7lyyb3s6cytf" path="res://Sunburst/Assets/Icons/profile-user.png" id="14_gs7ba"]
+[ext_resource type="PackedScene" uid="uid://bujp5l1qpuh5d" path="res://Sunburst/Scenes/Home/Home.tscn" id="14_sowsq"]
+[ext_resource type="PackedScene" uid="uid://d0jx50ppi6yqu" path="res://Sunburst/Scenes/Boss/Boss.tscn" id="15_38a5d"]
+[ext_resource type="Texture2D" uid="uid://du4ckwk8xxjte" path="res://Sunburst/Assets/Icons/settings (1).png" id="15_x3dqa"]
+[ext_resource type="Texture2D" uid="uid://ds8c680s8vwup" path="res://Sunburst/Assets/Icons/shopping-cart.png" id="16_oqe4i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pfirx"]
+font_size = 53
+font_color = Color(0.952941, 0.611765, 0.0705882, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_02afv"]
+font_size = 40
+font_color = Color(1, 0.843137, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrmhd"]
+border_width_left = 7
+border_width_right = 7
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4iio8"]
+bg_color = Color(0.952941, 0.611765, 0.0705882, 1)
+border_width_left = 8
+border_width_right = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yogk0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j5oo4"]
+font_size = 35
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o4504"]
+font_size = 35
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tol0g"]
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_ayyp2")
+
+[node name="Main" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Alignement" type="VBoxContainer" parent="Main"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Top Bar" type="HBoxContainer" parent="Main/Alignement"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="Main/Alignement/Top Bar"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_7ymk2")
+
+[node name="Portrait" type="TextureRect" parent="Main/Alignement/Top Bar/Panel"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+offset_left = 4.0
+offset_right = 304.0
+offset_bottom = 300.0
+texture = ExtResource("2_ew2o5")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/Alignement/Top Bar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Panel" type="PanelContainer" parent="Main/Alignement/Top Bar/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_7ymk2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main/Alignement/Top Bar/VBoxContainer/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ManaIcon" type="Button" parent="Main/Alignement/Top Bar/VBoxContainer/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+icon = ExtResource("3_kqfao")
+flat = true
+expand_icon = true
+
+[node name="Mana" type="Label" parent="Main/Alignement/Top Bar/VBoxContainer/Panel/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "20/20"
+label_settings = ExtResource("4_ei3q7")
+
+[node name="Panel2" type="PanelContainer" parent="Main/Alignement/Top Bar/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_7ymk2")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Main/Alignement/Top Bar/VBoxContainer/Panel2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="Button" parent="Main/Alignement/Top Bar/VBoxContainer/Panel2/HBoxContainer2"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+icon = ExtResource("4_dui0p")
+flat = true
+expand_icon = true
+
+[node name="Fortitude" type="Label" parent="Main/Alignement/Top Bar/VBoxContainer/Panel2/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "10/10
+"
+label_settings = ExtResource("6_sxky7")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Main/Alignement/Top Bar"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="Panel" type="PanelContainer" parent="Main/Alignement/Top Bar/VBoxContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_7ymk2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main/Alignement/Top Bar/VBoxContainer2/Panel"]
+layout_mode = 2
+
+[node name="CurrentLevel" type="Label" parent="Main/Alignement/Top Bar/VBoxContainer2/Panel/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "LV: 9999"
+label_settings = SubResource("LabelSettings_pfirx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="PanelContainer" parent="Main/Alignement/Top Bar/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_7ymk2")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Main/Alignement/Top Bar/VBoxContainer2/Panel2"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="TextureRect" type="TextureRect" parent="Main/Alignement/Top Bar/VBoxContainer2/Panel2/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+texture = ExtResource("6_7dmgb")
+expand_mode = 1
+
+[node name="Second Currency" type="Label" parent="Main/Alignement/Top Bar/VBoxContainer2/Panel2/HBoxContainer2"]
+layout_mode = 2
+text = "0
+"
+label_settings = ExtResource("5_dsiaw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="PanelContainer" parent="Main/Alignement/Top Bar/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_7ymk2")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Main/Alignement/Top Bar/VBoxContainer2/Panel3"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="TextureRect" type="TextureRect" parent="Main/Alignement/Top Bar/VBoxContainer2/Panel3/HBoxContainer3"]
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+texture = ExtResource("10_fword")
+expand_mode = 1
+
+[node name="Gold" type="Label" parent="Main/Alignement/Top Bar/VBoxContainer2/Panel3/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 45
+text = "0"
+label_settings = SubResource("LabelSettings_02afv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/Alignement"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="Main/Alignement/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 39
+theme_override_styles/background = SubResource("StyleBoxFlat_wrmhd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4iio8")
+
+[node name="CurrentLevel2" type="Label" parent="Main/Alignement/VBoxContainer/ProgressBar"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 1076.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yogk0")
+text = "  LVL: "
+label_settings = SubResource("LabelSettings_j5oo4")
+vertical_alignment = 1
+
+[node name="Experience" type="Label" parent="Main/Alignement/VBoxContainer/ProgressBar"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 1063.0
+offset_bottom = 52.0
+text = "EXP"
+label_settings = SubResource("LabelSettings_o4504")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Space" type="Control" parent="Main/Alignement"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="PanelContainer" parent="Main/Alignement/Space"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("8_80dwt")
+
+[node name="ProfileControl" parent="Main/Alignement/Space/Panel" instance=ExtResource("11_5ylvy")]
+visible = false
+layout_mode = 2
+
+[node name="JobControl" parent="Main/Alignement/Space/Panel" instance=ExtResource("12_f0u53")]
+visible = false
+layout_mode = 2
+
+[node name="HomeControl" parent="Main/Alignement/Space/Panel" instance=ExtResource("14_sowsq")]
+visible = false
+layout_mode = 2
+
+[node name="BossControl" parent="Main/Alignement/Space/Panel" instance=ExtResource("15_38a5d")]
+visible = false
+layout_mode = 2
+
+[node name="Bottom Bar" type="HBoxContainer" parent="Main/Alignement"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Main/Alignement/Bottom Bar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_tol0g")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Main/Alignement/Bottom Bar/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Kingdom" type="TextureButton" parent="Main/Alignement/Bottom Bar/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture_normal = ExtResource("11_jeb1e")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CraftButton" type="TextureButton" parent="Main/Alignement/Bottom Bar/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture_normal = ExtResource("12_vpmdf")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HomeButton" type="TextureButton" parent="Main/Alignement/Bottom Bar/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture_normal = ExtResource("13_8wubl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ProfileButton" type="TextureButton" parent="Main/Alignement/Bottom Bar/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture_normal = ExtResource("14_gs7ba")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ShopButton" type="TextureButton" parent="Main/Alignement/Bottom Bar/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture_normal = ExtResource("16_oqe4i")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SettingsButton" type="TextureButton" parent="Main/Alignement/Bottom Bar/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture_normal = ExtResource("15_x3dqa")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ManaTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="FortitudeTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="pressed" from="Main/Alignement/Top Bar/VBoxContainer/Panel/HBoxContainer/ManaIcon" to="." method="_on_mana_icon_pressed"]
+[connection signal="pressed" from="Main/Alignement/Top Bar/VBoxContainer/Panel2/HBoxContainer2/TextureRect" to="." method="_on_texture_rect_pressed"]
+[connection signal="pressed" from="Main/Alignement/Bottom Bar/PanelContainer/VBoxContainer/HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="Main/Alignement/Bottom Bar/PanelContainer/VBoxContainer/ProfileButton" to="." method="_on_profile_button_pressed"]
+[connection signal="timeout" from="ManaTimer" to="." method="_on_mana_timer_timeout"]
+[connection signal="timeout" from="FortitudeTimer" to="." method="_on_fortitude_timer_timeout"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4t66lyve6g54"]
+
+[ext_resource type="Script" path="res://Sunburst/Scripts/Game.gd" id="1_ar14v"]
+[ext_resource type="PackedScene" uid="uid://ci43lo81t53i1" path="res://Sunburst/UI/UI.tscn" id="1_fxnfa"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_ar14v")
+
+[node name="UI" parent="." instance=ExtResource("1_fxnfa")]

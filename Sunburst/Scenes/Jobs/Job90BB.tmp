@@ -1,0 +1,164 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxfgiujw566yj"]
+
+[ext_resource type="Texture2D" uid="uid://bjmwghhrqo1o4" path="res://Sunburst/Assets/Map1.god.størrelse.png" id="1_sfusn"]
+[ext_resource type="Script" path="res://Sunburst/Scenes/Jobs/JobControl.gd" id="1_vxjve"]
+[ext_resource type="Script" path="res://Sunburst/Scenes/Jobs/JobZone.gd" id="1_x8ill"]
+[ext_resource type="Texture2D" uid="uid://hdlj8wpksenn" path="res://Sunburst/Assets/Jobs.png" id="3_uhgh0"]
+
+[node name="JobControl" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_vxjve")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 75
+text = "JOB ZONES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_constants/icon_max_width = 250
+theme_override_font_sizes/font_size = 40
+text = "    JOB ZONE 1"
+icon = ExtResource("1_sfusn")
+flat = true
+alignment = 0
+
+[node name="Zone" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 4200.0
+offset_bottom = 1404.0
+texture_normal = ExtResource("1_sfusn")
+script = ExtResource("1_x8ill")
+
+[node name="Job1" type="TextureButton" parent="Zone"]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 283.0
+offset_right = 532.0
+offset_bottom = 425.0
+texture_normal = ExtResource("3_uhgh0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Job2" type="TextureButton" parent="Zone"]
+layout_mode = 0
+offset_left = 681.0
+offset_top = 937.0
+offset_right = 848.0
+offset_bottom = 1107.0
+texture_normal = ExtResource("3_uhgh0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Job3" type="TextureButton" parent="Zone"]
+layout_mode = 0
+offset_left = 1716.0
+offset_top = 997.0
+offset_right = 1872.0
+offset_bottom = 1155.0
+texture_normal = ExtResource("3_uhgh0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Job4" type="TextureButton" parent="Zone"]
+offset_left = 1500.0
+offset_top = 383.0
+offset_right = 1656.0
+offset_bottom = 541.0
+texture_normal = ExtResource("3_uhgh0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Job5" type="TextureButton" parent="Zone"]
+offset_left = 1206.0
+offset_top = 1187.0
+offset_right = 1362.0
+offset_bottom = 1345.0
+texture_normal = ExtResource("3_uhgh0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Job6" type="TextureButton" parent="Zone"]
+offset_left = 3342.0
+offset_top = 723.0
+offset_right = 3498.0
+offset_bottom = 881.0
+texture_normal = ExtResource("3_uhgh0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Job7" type="TextureButton" parent="Zone"]
+offset_left = 3744.0
+offset_top = 525.0
+offset_right = 3900.0
+offset_bottom = 683.0
+texture_normal = ExtResource("3_uhgh0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Job8" type="TextureButton" parent="Zone"]
+offset_left = 3291.0
+offset_top = 100.0
+offset_right = 3447.0
+offset_bottom = 258.0
+texture_normal = ExtResource("3_uhgh0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Job9" type="TextureButton" parent="Zone"]
+offset_left = 3039.0
+offset_top = 977.0
+offset_right = 3195.0
+offset_bottom = 1135.0
+texture_normal = ExtResource("3_uhgh0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Job10" type="TextureButton" parent="Zone"]
+offset_left = 2573.0
+offset_top = 1172.0
+offset_right = 2729.0
+offset_bottom = 1330.0
+texture_normal = ExtResource("3_uhgh0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Job11" type="TextureButton" parent="Zone"]
+offset_left = 2932.0
+offset_top = 335.0
+offset_right = 3088.0
+offset_bottom = 493.0
+texture_normal = ExtResource("3_uhgh0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

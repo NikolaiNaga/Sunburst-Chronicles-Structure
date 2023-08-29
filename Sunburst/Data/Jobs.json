@@ -1,0 +1,76 @@
+{
+	"Prepare a Meal":{
+		"level": 1,
+		"exp_gain": 1,
+		"gold_gain": 2,
+		"mana_cost": 2
+	},
+	"Fetching Water":{
+		"level": 3,
+		"exp_gain": 2,
+		"gold_gain": 5,
+		"mana_cost": 4
+	},
+	"Sharpen a Sword":{
+		"level": 5,
+		"exp_gain": 4,
+		"gold_gain": 9,
+		"mana_cost": 7
+	},
+	"Woodland Scouting":{
+		"level": 8,
+		"exp_gain": 5,
+		"gold_gain": 9,
+		"mana_cost": 7
+	},
+	"Baking Bread":{
+		"level": 10,
+		"exp_gain": 3,
+		"gold_gain": 8,
+		"mana_cost": 5
+	},
+	"Spinning Wool":{
+		"level": 15,
+		"exp_gain": 7,
+		"gold_gain": 7,
+		"mana_cost": 9
+	},
+	"Plow the Fields":{
+		"level": 20,
+		"exp_gain": 1,
+		"gold_gain": 1,
+		"mana_cost": 1
+	},
+	"Trim Hair":{
+		"level": 25,
+		"exp_gain": 1,
+		"gold_gain": 1,
+		"mana_cost": 1
+	},
+	"Milking Cows":{
+		"level": 30,
+		"exp_gain": 1,
+		"gold_gain": 1,
+		"mana_cost": 1
+	},
+	"Count Coins":{
+		"level": 35,
+		"exp_gain": 1,
+		"gold_gain": 1,
+		"mana_cost": 1
+	},
+	"Crafting Tools":{
+		"level": 40,
+		"exp_gain": 1,
+		"gold_gain": 1,
+		"mana_cost": 1
+	},
+
+
+
+
+
+
+
+
+}
