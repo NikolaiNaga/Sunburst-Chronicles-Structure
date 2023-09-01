@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=3 uid="uid://q0llmoxbwcwf"]
+
+[ext_resource type="Script" path="res://Sunburst/Scenes/Shop/Shop.gd" id="1_0jggc"]
+[ext_resource type="Resource" uid="uid://calskxmy7u7ky" path="res://Sunburst/Scenes/Shop/Items/Sword.tres" id="2_ns18g"]
+[ext_resource type="Resource" uid="uid://dxpbimcew2pdm" path="res://Sunburst/Scenes/Shop/Items/DiamondSword.tres" id="3_j4cag"]
+[ext_resource type="Resource" uid="uid://d2thkjo7xaeac" path="res://Sunburst/Scenes/Shop/Items/FireSword.tres" id="4_uggva"]
+[ext_resource type="PackedScene" uid="uid://37251en6xow0" path="res://Sunburst/Scenes/Shop/Items/item_showcase.tscn" id="5_tkfg4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48dld"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okrof"]
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n4w85"]
+font_size = 75
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6if6m"]
+bg_color = Color(0.894118, 0.894118, 0.894118, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ek6ml"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hbda"]
+bg_color = Color(0.905882, 0.454902, 0.137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cs5n1"]
+bg_color = Color(0.905882, 0.454902, 0.137255, 1)
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0jggc")
+_item_resources = Array[Resource("res://Sunburst/Resource/Item.gd")]([ExtResource("2_ns18g"), ExtResource("3_j4cag"), ExtResource("4_uggva"), null, null, null, null, null, null])
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_48dld")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ShopLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_okrof")
+text = "SHOP"
+label_settings = SubResource("LabelSettings_n4w85")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemList" type="ItemList" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+theme_override_styles/panel = SubResource("StyleBoxFlat_6if6m")
+theme_override_styles/hovered = SubResource("StyleBoxFlat_ek6ml")
+theme_override_styles/selected = SubResource("StyleBoxFlat_5hbda")
+theme_override_styles/selected_focus = SubResource("StyleBoxFlat_cs5n1")
+max_columns = 3
+fixed_icon_size = Vector2i(100, 100)
+
+[node name="ItemShowcase" parent="MarginContainer" instance=ExtResource("5_tkfg4")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[connection signal="item_selected" from="MarginContainer/PanelContainer/VBoxContainer/ItemList" to="." method="_on_item_list_item_selected"]

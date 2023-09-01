@@ -2,20 +2,34 @@ extends Node
 
 class_name Player
 
-# Ressources
-static var max_mana: int = 20
-static var max_fortitude: int = 10
-static var mana: int = max_mana
-static var fortitude: int = max_fortitude
+# Player Name
+var PlayerName: String = "NoName"
 
-static var mana_regen: int = 1
-static var fortitude_regen: int = 1
+# Ressources
+var max_mana: int = 10
+var max_fortitude: int = 10
+var mana: int = max_mana
+var fortitude: int = max_fortitude
+
+var mana_regen: int = 1
+var fortitude_regen: int = 1
 
 # Items & Currency
-static var gold: int = 0
+var gold: int = 0
+var solardust: int = 0
 
-static var skill_points: int = 0
+var skill_points: int = 0
 
 # Player
-static var bulwark = 0
-static var strength = 0
+var bulwark: int = 0
+var strength: int = 0
+
+func get_pvp_defense():
+	return 1 + (bulwark * 3) + strength
+
+func get_pvp_attack():
+	return 1 + (strength * 3) + bulwark
+
+var additional_boss_damage: int = 0
+
+

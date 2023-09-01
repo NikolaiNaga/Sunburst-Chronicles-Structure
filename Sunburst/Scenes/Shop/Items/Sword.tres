@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item_Resource" load_steps=3 format=3 uid="uid://calskxmy7u7ky"]
+
+[ext_resource type="Texture2D" uid="uid://ducddh7ubal37" path="res://Sunburst/Assets/Items/sword.png" id="1_ateeo"]
+[ext_resource type="Script" path="res://Sunburst/Resource/Item.gd" id="1_oabfm"]
+
+[resource]
+script = ExtResource("1_oabfm")
+Item_Name = "Sword"
+Item_Image = ExtResource("1_ateeo")
+Item_Cost = 100
+Item_Bulwark = 0
+Item_Strength = 0
+Item_PVPdef = 0
+Item_PVPatt = 1
+Item_BossDamage = 0
+Item_MaxQuantity = 100

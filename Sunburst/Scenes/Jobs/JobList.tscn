@@ -9,7 +9,7 @@
 [ext_resource type="LabelSettings" uid="uid://bjwjvpqoniseq" path="res://Sunburst/Styles/LabelSettingsDefault.tres" id="7_jtnju"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jndep"]
-size = Vector2(4196, 1404)
+size = Vector2(4196, 1400)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7iou8"]
 bg_color = Color(0.352941, 0.560784, 0.682353, 1)
@@ -52,6 +52,7 @@ border_width_bottom = 3
 border_color = Color(1, 1, 1, 1)
 
 [node name="JobControl" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -67,6 +68,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 mouse_filter = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_right = 40
@@ -86,160 +88,170 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
 theme_override_constants/icon_max_width = 250
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 55
 text = "    JOB ZONE 1"
 icon = ExtResource("1_sfusn")
 flat = true
 alignment = 0
+expand_icon = true
 
-[node name="ZoneControl" type="Control" parent="."]
+[node name="Node" type="Node" parent="MarginContainer"]
+
+[node name="ZoneControl" type="Control" parent="MarginContainer/Node"]
 unique_name_in_owner = true
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -155.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Zone" type="TextureRect" parent="ZoneControl"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_right = 4200.0
-offset_bottom = 1404.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 mouse_filter = 2
-texture = ExtResource("1_sfusn")
 script = ExtResource("1_x8ill")
 
-[node name="Job1" type="TextureButton" parent="ZoneControl/Zone"]
+[node name="Zone" type="TextureRect" parent="MarginContainer/Node/ZoneControl"]
+unique_name_in_owner = true
+layout_mode = 1
+offset_top = 361.0
+offset_right = 4200.0
+offset_bottom = 1754.0
+texture = ExtResource("1_sfusn")
+expand_mode = 1
+
+[node name="Job1" type="TextureButton" parent="MarginContainer/Node/ZoneControl/Zone"]
 layout_mode = 0
-offset_left = 390.0
-offset_top = 283.0
-offset_right = 532.0
-offset_bottom = 425.0
+offset_left = 419.0
+offset_top = 339.0
+offset_right = 561.0
+offset_bottom = 481.0
 texture_normal = ExtResource("3_uhgh0")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Job2" type="TextureButton" parent="ZoneControl/Zone"]
+[node name="Job2" type="TextureButton" parent="MarginContainer/Node/ZoneControl/Zone"]
 layout_mode = 0
-offset_left = 681.0
-offset_top = 937.0
-offset_right = 848.0
-offset_bottom = 1107.0
+offset_left = 742.0
+offset_top = 982.0
+offset_right = 909.0
+offset_bottom = 1152.0
 texture_normal = ExtResource("3_uhgh0")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Job3" type="TextureButton" parent="ZoneControl/Zone"]
+[node name="Job3" type="TextureButton" parent="MarginContainer/Node/ZoneControl/Zone"]
 layout_mode = 0
-offset_left = 1716.0
-offset_top = 997.0
-offset_right = 1872.0
-offset_bottom = 1155.0
+offset_left = 866.0
+offset_top = 287.0
+offset_right = 1022.0
+offset_bottom = 445.0
 texture_normal = ExtResource("3_uhgh0")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Job4" type="TextureButton" parent="ZoneControl/Zone"]
+[node name="Job4" type="TextureButton" parent="MarginContainer/Node/ZoneControl/Zone"]
 layout_mode = 0
-offset_left = 1500.0
-offset_top = 383.0
-offset_right = 1656.0
-offset_bottom = 541.0
+offset_left = 1554.0
+offset_top = 370.0
+offset_right = 1710.0
+offset_bottom = 528.0
 texture_normal = ExtResource("3_uhgh0")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Job5" type="TextureButton" parent="ZoneControl/Zone"]
+[node name="Job5" type="TextureButton" parent="MarginContainer/Node/ZoneControl/Zone"]
 layout_mode = 0
-offset_left = 1206.0
-offset_top = 1187.0
-offset_right = 1362.0
-offset_bottom = 1345.0
+offset_left = 1827.0
+offset_top = 1018.0
+offset_right = 1983.0
+offset_bottom = 1176.0
 texture_normal = ExtResource("3_uhgh0")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Job6" type="TextureButton" parent="ZoneControl/Zone"]
+[node name="Job6" type="TextureButton" parent="MarginContainer/Node/ZoneControl/Zone"]
 layout_mode = 0
-offset_left = 3342.0
-offset_top = 723.0
-offset_right = 3498.0
-offset_bottom = 881.0
+offset_left = 2334.0
+offset_top = 852.0
+offset_right = 2490.0
+offset_bottom = 1010.0
 texture_normal = ExtResource("3_uhgh0")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Job7" type="TextureButton" parent="ZoneControl/Zone"]
+[node name="Job7" type="TextureButton" parent="MarginContainer/Node/ZoneControl/Zone"]
 layout_mode = 0
-offset_left = 3744.0
-offset_top = 525.0
-offset_right = 3900.0
-offset_bottom = 683.0
+offset_left = 2546.0
+offset_top = 1198.0
+offset_right = 2702.0
+offset_bottom = 1356.0
 texture_normal = ExtResource("3_uhgh0")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Job8" type="TextureButton" parent="ZoneControl/Zone"]
+[node name="Job8" type="TextureButton" parent="MarginContainer/Node/ZoneControl/Zone"]
 layout_mode = 0
-offset_left = 3291.0
-offset_top = 100.0
-offset_right = 3447.0
-offset_bottom = 258.0
+offset_left = 3093.0
+offset_top = 876.0
+offset_right = 3249.0
+offset_bottom = 1034.0
 texture_normal = ExtResource("3_uhgh0")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Job9" type="TextureButton" parent="ZoneControl/Zone"]
+[node name="Job9" type="TextureButton" parent="MarginContainer/Node/ZoneControl/Zone"]
 layout_mode = 0
-offset_left = 3039.0
-offset_top = 977.0
-offset_right = 3195.0
-offset_bottom = 1135.0
+offset_left = 3796.0
+offset_top = 1026.0
+offset_right = 3952.0
+offset_bottom = 1184.0
 texture_normal = ExtResource("3_uhgh0")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Job10" type="TextureButton" parent="ZoneControl/Zone"]
+[node name="Job10" type="TextureButton" parent="MarginContainer/Node/ZoneControl/Zone"]
 layout_mode = 0
-offset_left = 2573.0
-offset_top = 1172.0
-offset_right = 2729.0
-offset_bottom = 1330.0
+offset_left = 3569.0
+offset_top = 436.0
+offset_right = 3725.0
+offset_bottom = 594.0
 texture_normal = ExtResource("3_uhgh0")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Job11" type="TextureButton" parent="ZoneControl/Zone"]
+[node name="Job11" type="TextureButton" parent="MarginContainer/Node/ZoneControl/Zone"]
 layout_mode = 0
-offset_left = 2932.0
-offset_top = 335.0
-offset_right = 3088.0
-offset_bottom = 493.0
+offset_left = 3027.0
+offset_top = 392.0
+offset_right = 3183.0
+offset_bottom = 550.0
 texture_normal = ExtResource("3_uhgh0")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Back" type="Button" parent="ZoneControl/Zone"]
+[node name="Back" type="Button" parent="MarginContainer/Node/ZoneControl/Zone"]
 layout_mode = 0
-offset_left = 14.0
-offset_top = 1261.0
-offset_right = 139.0
-offset_bottom = 1382.0
+offset_left = 20.0
+offset_top = 1254.0
+offset_right = 145.0
+offset_bottom = 1375.0
 icon = ExtResource("5_xvj5i")
 flat = true
 expand_icon = true
 
-[node name="Area2D" type="Area2D" parent="ZoneControl"]
+[node name="Area2D" type="Area2D" parent="MarginContainer/Node/ZoneControl/Zone"]
+position = Vector2(0, -361)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneControl/Area2D"]
-position = Vector2(2102, 702)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/Node/ZoneControl/Zone/Area2D"]
+position = Vector2(2099, 1061)
 shape = SubResource("RectangleShape2D_jndep")
 
 [node name="JobPopup" type="PanelContainer" parent="."]
@@ -339,7 +351,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_6vop3")
 text = "DO JOB"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="ZoneControl/Zone/Back" to="ZoneControl/Zone" method="_on_back_pressed"]
-[connection signal="input_event" from="ZoneControl/Area2D" to="ZoneControl/Zone" method="_on_area_2d_input_event"]
+[connection signal="pressed" from="MarginContainer/Node/ZoneControl/Zone/Back" to="MarginContainer/Node/ZoneControl" method="_on_back_pressed"]
+[connection signal="input_event" from="MarginContainer/Node/ZoneControl/Zone/Area2D" to="MarginContainer/Node/ZoneControl" method="_on_area_2d_input_event"]
 [connection signal="pressed" from="JobPopup/VBoxContainer/MarginContainer/VBoxContainer2/HBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="JobPopup/VBoxContainer/MarginContainer/VBoxContainer2/HBoxContainer/DoJob" to="." method="_on_do_job_pressed"]

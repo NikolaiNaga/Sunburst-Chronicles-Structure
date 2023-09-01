@@ -1,4 +1,4 @@
-extends TextureRect
+extends Control
 
 var selected = false
 var mouse_offset = Vector2(0, 0)

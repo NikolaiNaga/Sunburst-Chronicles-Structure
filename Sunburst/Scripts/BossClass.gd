@@ -12,7 +12,7 @@ static var damage_to_boss_total = 0
 static var level_damage_contribution: float = 0.0
 
 static func get_damage_output():
-	return Player.bulwark + Player.strength + 1 + (LevelingSystem.current_level * level_damage_contribution)
+	return PlayerClass.bulwark + PlayerClass.strength + 1 + (LevelingSystem.current_level * level_damage_contribution) + PlayerClass.additional_boss_damage
 
 # Boss System
 static func get_health_required(level):
@@ -28,3 +28,4 @@ static func boss_level_up():
 	current_boss_level +=1
 	damage_to_boss_required = get_health_required(current_boss_level + 1)
 	damage_to_boss = damage_to_boss_required
+	PlayerClass.solardust += 1

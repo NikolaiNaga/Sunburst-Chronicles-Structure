@@ -1,4 +1,23 @@
-[gd_scene format=3 uid="uid://dxexhjhuf1m87"]
+[gd_scene load_steps=12 format=3 uid="uid://dxexhjhuf1m87"]
+
+[ext_resource type="LabelSettings" uid="uid://b67c3oiqvftqi" path="res://Sunburst/Styles/ExperienceLabel.tres" id="1_8iqgo"]
+[ext_resource type="Script" path="res://Sunburst/Scenes/Profile/ProfileScript.gd" id="1_j8sdt"]
+[ext_resource type="Texture2D" uid="uid://b2ra1lklde2wt" path="res://Sunburst/Assets/plus.png" id="3_84r2q"]
+[ext_resource type="Texture2D" uid="uid://c6iru6mnlcfs8" path="res://Sunburst/Assets/mana (1).png" id="4_uy70b"]
+[ext_resource type="Texture2D" uid="uid://bpiwjybbqiwkw" path="res://Sunburst/Assets/Items/defense.png" id="4_wq43r"]
+[ext_resource type="Texture2D" uid="uid://dwvxfvxy6cv34" path="res://Sunburst/Assets/Fortitude.webp" id="5_hw4gj"]
+[ext_resource type="Texture2D" uid="uid://2te232r70pl0" path="res://Sunburst/Assets/Items/swords.png" id="5_w6i23"]
+[ext_resource type="Texture2D" uid="uid://dec1x6jrir6ih" path="res://Sunburst/Assets/final-boss.png" id="8_fx6ii"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2bao2"]
+bg_color = Color(0.427451, 0.427451, 0.427451, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xe65c"]
+font_size = 80
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bauos"]
 
 [node name="Profile" type="Control"]
 layout_mode = 3
@@ -7,3 +26,234 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_j8sdt")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2bao2")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="PlayerName" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = SubResource("LabelSettings_xe65c")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(170, 70)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bauos")
+
+[node name="PlayerLevel" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Level: 1000"
+label_settings = ExtResource("1_8iqgo")
+
+[node name="PlayerExperience" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Experience: 1000/1000"
+label_settings = ExtResource("1_8iqgo")
+
+[node name="PlayerTotalExperience" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Total Experience: 100000"
+label_settings = ExtResource("1_8iqgo")
+
+[node name="PanelContainer3" type="PanelContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 90)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bauos")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AddMana" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+icon = ExtResource("3_84r2q")
+flat = true
+expand_icon = true
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture = ExtResource("4_uy70b")
+expand_mode = 1
+
+[node name="PlayerMana" type="RichTextLabel" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "Mana: 0"
+fit_content = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AddFortitude" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+icon = ExtResource("3_84r2q")
+flat = true
+expand_icon = true
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture = ExtResource("5_hw4gj")
+expand_mode = 1
+
+[node name="PlayerFortitude" type="RichTextLabel" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "Fortitude: 0"
+fit_content = true
+
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bauos")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AddBulwark" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+icon = ExtResource("3_84r2q")
+flat = true
+expand_icon = true
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture = ExtResource("4_wq43r")
+expand_mode = 1
+
+[node name="PlayerBulwark" type="RichTextLabel" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "Bulwark: 0"
+fit_content = true
+
+[node name="PlayerPVPd" type="RichTextLabel" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 35
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AddStrength" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+icon = ExtResource("3_84r2q")
+flat = true
+expand_icon = true
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture = ExtResource("5_w6i23")
+expand_mode = 1
+
+[node name="PlayerStrength" type="RichTextLabel" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "Strength: 0"
+fit_content = true
+
+[node name="PlayerPVPa" type="RichTextLabel" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 35
+
+[node name="PanelContainer4" type="PanelContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bauos")
+
+[node name="PlayerSkillPoints" type="RichTextLabel" parent="MarginContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "Skill Points: 0"
+fit_content = true
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("8_fx6ii")
+expand_mode = 1
+
+[node name="PlayerDamage" type="RichTextLabel" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(1, 0.431373, 0.180392, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "Boss Damage: 0"
+fit_content = true
+
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/AddMana" to="." method="_on_add_mana_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2/AddFortitude" to="." method="_on_add_fortitude_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer3/AddBulwark" to="." method="_on_add_bulwark_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer4/AddStrength" to="." method="_on_add_strength_pressed"]

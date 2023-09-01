@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item_Resource" load_steps=3 format=3 uid="uid://dxpbimcew2pdm"]
+
+[ext_resource type="Texture2D" uid="uid://bbqto6yu28qv3" path="res://Sunburst/Assets/Items/dia_sword.png" id="1_1o366"]
+[ext_resource type="Script" path="res://Sunburst/Resource/Item.gd" id="1_08lb7"]
+
+[resource]
+script = ExtResource("1_08lb7")
+Item_Name = "Diamond Sword"
+Item_Image = ExtResource("1_1o366")
+Item_Cost = 1000
+Item_Bulwark = 0
+Item_Strength = 0
+Item_PVPdef = 0
+Item_PVPatt = 2
+Item_BossDamage = 0
+Item_MaxQuantity = 25

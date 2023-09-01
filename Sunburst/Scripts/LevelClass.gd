@@ -22,7 +22,7 @@ static func gain_experience(amount):
 static func level_up():
 	current_level += 1
 	experience_required = get_required_experience(current_level + 1)
-	Player.skill_points += 3
-	Player.mana = Player.max_mana
-	Player.fortitude = Player.max_fortitude
+	PlayerClass.skill_points += 3
+	PlayerClass.mana = PlayerClass.max_mana
+	PlayerClass.fortitude = PlayerClass.max_fortitude
 

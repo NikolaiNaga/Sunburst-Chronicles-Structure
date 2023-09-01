@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item_Resource" load_steps=3 format=3 uid="uid://d2thkjo7xaeac"]
+
+[ext_resource type="Texture2D" uid="uid://c872f2v765dhu" path="res://Sunburst/Assets/Items/fire_sword.png" id="1_3cwqf"]
+[ext_resource type="Script" path="res://Sunburst/Resource/Item.gd" id="1_k7uye"]
+
+[resource]
+script = ExtResource("1_k7uye")
+Item_Name = "Flaming Sword"
+Item_Image = ExtResource("1_3cwqf")
+Item_Cost = 5000
+Item_Bulwark = 0
+Item_Strength = 0
+Item_PVPdef = 1
+Item_PVPatt = 1
+Item_BossDamage = 1
+Item_MaxQuantity = 10

@@ -2,6 +2,6 @@
 
 [resource]
 font_size = 60
-font_color = Color(1, 0.843137, 0, 1)
+font_color = Color(0.796078, 0.705882, 0, 1)
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)

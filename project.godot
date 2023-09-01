@@ -14,6 +14,10 @@ config/name="Sunburst Chronicles Structure"
 run/main_scene="res://Sunburst/Main.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 
+[autoload]
+
+PlayerClass="*res://Sunburst/Scripts/PlayerClass.gd"
+
 [display]
 
 window/size/viewport_width=1080

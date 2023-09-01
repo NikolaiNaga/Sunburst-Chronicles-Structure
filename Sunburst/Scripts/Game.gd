@@ -6,6 +6,10 @@ const JOBS_FILE_PATH = "res://Sunburst/Data/Jobs.json"
 var jobs_data
 static var jobs : Dictionary = {}
 
+const ITEMS_FILE_PATH = "res://Sunburst/Data/Items.json"
+var items_data
+static var items : Dictionary = {}
+
 func _ready() -> void:
 	load_json()
 	for job_name in jobs_data:
@@ -17,7 +21,8 @@ func _ready() -> void:
 		job.gold_gain = job_data.gold_gain
 		job.mana_cost = job_data.mana_cost
 		jobs[job_name] = job
- 
+
+
 func load_json():
 	var json_text = FileAccess.get_file_as_string(JOBS_FILE_PATH)
 	jobs_data = JSON.parse_string(json_text)
